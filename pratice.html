@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+Generate random rgb color boxes using an input field.
+The number entered inside the input field should determine the number of color boxes that will be generated.
+Ensure to design your page and make it professionally attractive.
+Ensure to validate your code where necessary
+
+
+
+<input type="number"  id="colorbox">
+<button onclick="generateColor ()"> Generate</button>
+
+<p id="result"></p>
+
+
+
+</body>
+<script>
+  
+
+    function generateColor (){
+
+          let input = document.getElementById('colorbox').value.trim();
+    let result = document.getElementById ('result')
+
+
+        if (input === '') {
+          result.innerHTML = 'cant generate colour for am empty value';
+          return;
+        }
+
+
+    }
+for (let index = 0; index < number; index++) {
+  
+    let red = Math.floor( Math.random () * 256);
+     let blue = Math.floor( Math.random () * 256);
+     let green = Math.floor( Math.random () * 256);
+
+       let rgbColor = `rgb(${red}, ${green}, ${blue})`;
+
+        let box = document.createElement("div")
+}
+
+</script>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random RGB Colors</title>
+</head>
+
+<body>
+
+    <input type="number" id="colorbox">
+
+    <button onclick="generateColor()">Generate</button>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        let result = document.getElementById('result');
+
+
+        function generateColor() {
+
+            let input = document.getElementById('colorbox').value.trim();
+
+            if (input === '') {
+
+                result.innerHTML = 'Cannot generate colour for an empty value';
+
+                return;
+            }
+
+
+            let number = Number(input);
+
+
+            for (let index = 0; index < number; index++) {
+
+                let red = Math.floor(Math.random() * 256);
+
+                let blue = Math.floor(Math.random() * 256);
+
+                let green = Math.floor(Math.random() * 256);
+
+
+                let rgbColor = `rgb(${red}, ${green}, ${blue})`;
+
+
+                let box = document.createElement("div");
+
+
+                box.style.backgroundColor = rgbColor;
+
+                box.style.width = "150px";
+
+                box.style.height = "150px";
+
+                box.style.margin = "10px";
+
+
+                box.innerHTML = rgbColor;
+
+
+                result.appendChild(box);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

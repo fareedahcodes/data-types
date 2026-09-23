@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #173b2b;
+    background: #f7faf8;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 75px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+    text-decoration: none;
+    color: #126b45;
+    font-size: 25px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.logo i {
+    font-size: 22px;
+}
+
+.login-link {
+    font-size: 14px;
+    color: #666;
+}
+
+.login-link a {
+    color: #126b45;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.signup-container {
+    min-height: calc(100vh - 75px);
+    display: grid;
+    grid-template-columns: 45% 55%;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.signup-image {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.signup-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+
+    padding: 70px 55px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    color: white;
+
+    background: linear-gradient(
+        transparent 30%,
+        rgba(0, 50, 30, 0.9)
+    );
+}
+
+.image-overlay h1 {
+    font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.image-overlay p {
+    max-width: 400px;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.trust-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.trust-items div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.trust-items i {
+    color: #8be0b5;
+}
+
+
+/* =========================
+   FORM SECTION
+========================= */
+
+.signup-form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 70px;
+    background: #ffffff;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 520px;
+}
+
+
+/* HEADING */
+
+.form-heading {
+    margin-bottom: 25px;
+}
+
+.small-heading {
+    color: #168052;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.form-heading h2 {
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.form-heading p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ACCOUNT TYPE
+========================= */
+
+.account-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.type-btn {
+    padding: 13px;
+    border: 1px solid #dddddd;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #555;
+    font-size: 14px;
+}
+
+.type-btn i {
+    margin-right: 7px;
+}
+
+.type-btn.active {
+    background: #e9f7ef;
+    border-color: #168052;
+    color: #126b45;
+    font-weight: 600;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group {
+    margin-bottom: 17px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #333;
+}
+
+.input-box {
+    height: 47px;
+    border: 1px solid #dddddd;
+    border-radius: 7px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 14px;
+
+    transition: 0.2s;
+}
+
+.input-box:focus-within {
+    border-color: #168052;
+    box-shadow: 0 0 0 3px rgba(22, 128, 82, 0.08);
+}
+
+.input-box i {
+    color: #999;
+    margin-right: 10px;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+}
+
+.input-box select {
+    cursor: pointer;
+}
+
+
+/* =========================
+   TERMS
+========================= */
+
+.terms {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.terms input {
+    margin-top: 3px;
+    accent-color: #168052;
+}
+
+.terms label {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #777;
+}
+
+.terms a {
+    color: #168052;
+    text-decoration: none;
+}
+
+
+/* =========================
+   SIGN UP BUTTON
+========================= */
+
+.signup-btn {
+    width: 100%;
+    height: 50px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #168052;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    transition: 0.3s;
+}
+
+.signup-btn:hover {
+    background: #0f633f;
+}
+
+.signup-btn i {
+    font-size: 13px;
+}
+
+
+/* =========================
+   BOTTOM LOGIN
+========================= */
+
+.bottom-login {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #777;
+}
+
+.bottom-login a {
+    color: #168052;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .signup-container {
+        grid-template-columns: 1fr;
+    }
+
+    .signup-image {
+        display: none;
+    }
+
+    .signup-form-section {
+        padding: 50px 30px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .login-link {
+        font-size: 12px;
+    }
+
+    .signup-form-section {
+        padding: 35px 20px;
+    }
+
+    .form-heading h2 {
+        font-size: 27px;
+    }
+}

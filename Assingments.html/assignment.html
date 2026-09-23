@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: antiquewhite;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      height: 100vh;
+    }
+
+    input {
+      width: 200px;
+      border: none;
+      padding: 10px;
+      border-radius: 15px;
+    }
+
+    button {
+      background-color: pink;
+      color: black;
+      padding: 5px;
+      border: 2px;
+      border-radius: 5px;
+    }
+
+    p {
+    color: black;
+    font-weight: bold;
+    }
+
+   
+
+
+  </style>
+  <body>
+    <input type="text" placeholder="enter month's name" id="monthname" />
+    <button onclick="month()">check</button>
+    <p id="result"></p>
+  </body>
+
+  <script>
+    function month() {
+      let searchfield = document
+        .getElementById("monthname")
+        .value.trim()
+        .toLowerCase();
+
+      if (searchfield === "january" || searchfield === "jan") {
+        console.log("January has 31 days");
+
+    } else if (searchfield === "february" || searchfield === "feb") {
+        console.log("February has 28 days");
+
+    } else if (searchfield === "march" || searchfield === "mar") {
+        console.log("March has 31 days");
+
+    } else if (searchfield === "april" || searchfield === "apr") {
+        console.log("April has 30 days");
+
+    } else if (searchfield === "may") {
+        console.log("May has 31 days");
+
+    } else if (searchfield === "june" || searchfield === "jun") {
+        console.log("June has 30 days");
+
+    } else if (searchfield === "july" || searchfield === "jul") {
+        console.log("July has 31 days");
+
+    } else if (searchfield === "august" || searchfield === "aug") {
+        console.log("August has 31 days");
+
+    } else if (searchfield === "september" || searchfield === "sept") {
+        console.log("September has 30 days");
+
+    } else if (searchfield === "october" || searchfield === "oct") {
+        console.log("October has 31 days");
+
+    } else if (searchfield === "november" || searchfield === "nov") {
+        console.log("November has 30 days");
+
+    } else if (searchfield === "december" || searchfield === "dec") {
+        console.log("December has 31 days");
+
+    } else {
+        document.getElementById("result").innerHTML =
+            "Please enter a valid month's name";
+    }
+}
+    
+  </script>
+</html>

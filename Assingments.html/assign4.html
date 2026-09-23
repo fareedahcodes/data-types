@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random RGB Colors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.container > p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.input-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 250px;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #333;
+}
+
+button {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #111;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333;
+}
+
+#error {
+    color: red;
+    min-height: 25px;
+    margin-top: 10px;
+}
+
+#colorContainer {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.color-box {
+    height: 150px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 2px 5px black;
+    transition: transform 0.3s ease;
+}
+
+.color-box:hover {
+    transform: translateY(-5px);
+}
+</style>
+
+<body>
+
+    <div class="container">
+
+        <h1>Random </h1>
+
+        <p>Enter a number to generate random RGB color boxes.</p>
+
+        <div class="input-area">
+            <input 
+                type="number" 
+                id="boxNumber" 
+                placeholder="Enter number of boxes"
+                min="1"
+            >
+
+            <button onclick="generateColors()">Generate</button>
+        </div>
+
+        <p id="error"></p>
+
+        <div id="colorContainer"></div>
+
+    </div>
+
+</body>
+
+<script>
+    function generateColors() {
+
+    let input = document.getElementById("boxNumber");
+    let result = document.getElementById("colorContainer");
+    let error = document.getElementById("error");
+
+    let number = input.value.trim();
+
+   
+    
+    result.innerHTML = "";
+    error.innerHTML = "";
+
+
+    if (number === "") {
+        error.innerHTML = "Please enter a number.";
+        return;
+    }
+
+    if (number <= 0) {
+        error.innerHTML = "Please enter a number greater than 0.";
+        return;
+    }
+
+    if (!Number.isInteger(Number(number))) {
+        error.innerHTML = "Please enter a whole number.";
+        return;
+    }
+
+    if (number > 100) {
+        error.innerHTML = "Please enter a number between 1 and 100.";
+        return;
+    }
+
+   
+    for (let i = 0; i < number; i++) {
+
+        let red = Math.floor(Math.random() * 256);
+        let green = Math.floor(Math.random() * 256);
+        let blue = Math.floor(Math.random() * 256);
+
+        let rgbColor = `rgb(${red}, ${green}, ${blue})`;
+
+        let box = document.createElement("div");
+
+        box.className = "color-box";
+
+        box.style.backgroundColor = rgbColor;
+
+        box.innerHTML = rgbColor;
+
+        result.appendChild(box);
+    }
+}
+</script>
+</html>

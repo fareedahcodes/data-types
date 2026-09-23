@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="january">
+<input type="text" id="february">
+<button onclick="daysnum">submit</button>
+</body>
+
+<!-- let fnameField = document.getElementById('fname')
+    let lnameField = document.getElementById('lname')
+    let passField = document.getElementById('pass')
+    let outputField = document.getElementById('output')
+
+    function signup() {
+        let fname = fnameField.value.trim();
+        let lname = lnameField.value.trim();
+        let password = passField.value.trim();
+
+        outputField.innerHTML = '';
+
+        if(!fname || !lname || !password){
+            outputField.innerHTML = ('All fields are required!');
+        }else{
+            if(password.length < 6){  
+                outputField.innerHTML = ('Password must be greater than 6');
+            }else{
+                 outputField.innerHTML = 'All fields completed';
+            }
+        } -->
+
+<script>
+    let januaryfield = document.getElementById ('january')
+    let februaryfield= document.getElementById('february')
+     let outputField = document.getElementById('output')
+
+    function daysnum (){
+    let january= januaryfield.value;
+    let february =februaryfield.value;
+
+     outputField.innerHTML = '';
+
+     if (january=january){
+        outputField.innerHTML= ('january has 31 days')
+     }
+
+
+    }
+</script>
+</html>
