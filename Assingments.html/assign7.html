@@ -114,15 +114,13 @@
 </div>
 
 </body>
-
 <script>
-    let store = []
+    let store = [];
 
-function addtodo (){
-      
-       let todo = document.getElementById('todo').value.trim()
+function addtodo() {
+    let todo = document.getElementById('todo').value.trim();
 
-        if(todo=== ''){
+    if (todo === '') {
         alert('Please enter a todo');
         return;
     }
@@ -136,12 +134,37 @@ function displayOutput() {
 
     output.innerHTML = '';
 
-    for(let i = 0; i < store.length; i++){
+    for (let i = 0; i < store.length; i++) {
 
-        output.innerHTML += `<div class="todo-item">${store[i]}</div>`;
+        output.innerHTML += `
+            <div class="todo-item">
+                ${store[i]}
 
+                <button onclick="editTodo(${i})">Edit</button>
+
+                <button onclick="deleteTodo(${i})">Delete</button>
+            </div>
+        `;
     }
 }
 
+function editTodo(index) {
+
+    let newTodo = prompt("Edit your todo:", store[index]);
+
+    if (newTodo !== null && newTodo.trim() !== "") {
+
+        store[index] = newTodo.trim();
+
+        displayOutput();
+    }
+}
+
+function deleteTodo(index) {
+
+    store.splice(index, 1);
+
+    displayOutput();
+}
 </script>
 </html>
