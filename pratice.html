@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,128 +6,112 @@
     <title>Document</title>
 </head>
 <body>
-    
-Generate random rgb color boxes using an input field.
-The number entered inside the input field should determine the number of color boxes that will be generated.
-Ensure to design your page and make it professionally attractive.
-Ensure to validate your code where necessary
-
-
-
-<input type="number"  id="colorbox">
-<button onclick="generateColor ()"> Generate</button>
-
-<p id="result"></p>
-
-
-
+    <style>
+        #output {
+            background-color: black;
+            width: 400px;
+            height: 200px;
+            color: white;
+        }
+    </style>
+    <html>
+        <div id="output"></div>
+    </html>
 </body>
+
+
+<!-- <input type="text" id="months">
+<button onclick="calculateDays ()">Check</button>
+<div id="output"></div> -->
+
 <script>
+
+let student = {
+    name: "Aisha",
+    age: 20,
+    school: "SQI",
+    course: "Software Development",
+    hobbies: ["coding", "reading", "cooking"]
+};
+
+let output = document.getElementById('output')
+  
+Object.keys(student).forEach(function (keys) {
+
+    if ( typeof student[keys]=== 'string'   || typeof student[keys] === 'number') {
+      output.innerHTML +=` ${keys} : ${student[keys]} `
+    
+  }
+})
+
   
 
-    function generateColor (){
+    
 
-          let input = document.getElementById('colorbox').value.trim();
-    let result = document.getElementById ('result')
+     
 
 
-        if (input === '') {
-          result.innerHTML = 'cant generate colour for am empty value';
-          return;
+
+
+
+
+
+
+
+
+
+
+      // function calculateDays(){
+      //   let search = document.getElementById('months').value.trim().toUpperCase();
+      //   let result = document.getElementById('output')
+
+      //    if(search === 'JANUARY' || search === 'JAN') {
+      //    result.innerHTML = 'janaury has 31 days'
+        
+      // }
+      // }
+
+
+    
+    // function square(num){
+    //     return num*num;
+        
+    // }
+    // let result= square(5)
+    // console.log(result);
+
+
+//     function checkNumber(num) {
+//     if (num > 0){
+//         return 'positive';
+//     } else (num<0){
+//         return 'negative';
+//     }
+// }
+    
+
+
+function learnWebDevelopment() {
+    let level = 1;
+
+    while (level <= 3) {
+        if (level === 1) {
+            console.log("HTML: This is easy");
+        } else if (level === 2) {
+            console.log("CSS: Okay, I got this");
+        } else {
+            console.log("JavaScript: ???");  
         }
 
-
+        level++;
     }
-for (let index = 0; index < number; index++) {
-  
-    let red = Math.floor( Math.random () * 256);
-     let blue = Math.floor( Math.random () * 256);
-     let green = Math.floor( Math.random () * 256);
-
-       let rgbColor = `rgb(${red}, ${green}, ${blue})`;
-
-        let box = document.createElement("div")
 }
 
+learnWebDevelopment();
+{
+
+}
+
+
 </script>
-</html> -->
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random RGB Colors</title>
-</head>
-
-<body>
-
-    <input type="number" id="colorbox">
-
-    <button onclick="generateColor()">Generate</button>
-
-    <p id="result"></p>
-
-
-
-</body>
-
-<script>
-
-        let result = document.getElementById('result');
-
-
-        function generateColor() {
-
-            let input = document.getElementById('colorbox').value.trim();
-
-            if (input === '') {
-
-                result.innerHTML = 'Cannot generate colour for an empty value';
-
-                return;
-            }
-
-
-            let number = Number(input);
-
-
-            for (let index = 0; index < number; index++) {
-
-                let red = Math.floor(Math.random() * 256);
-
-                let blue = Math.floor(Math.random() * 256);
-
-                let green = Math.floor(Math.random() * 256);
-
-
-                let rgbColor = `rgb(${red}, ${green}, ${blue})`;
-
-
-                let box = document.createElement("div");
-
-
-                box.style.backgroundColor = rgbColor;
-
-                box.style.width = "150px";
-
-                box.style.height = "150px";
-
-                box.style.margin = "10px";
-
-
-                box.innerHTML = rgbColor;
-
-
-                result.appendChild(box);
-
-            }
-
-        }
-
-    </script>
-
-
 </html>

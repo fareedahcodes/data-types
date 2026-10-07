@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.signup-box {
+    background-color: white;
+    width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.signup-box > p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: gray;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+#error {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+#result {
+    width: 300px;
+   background-color: transparent;
+    color: blueviolet;
+}
+
+
+</style>
+<body>
+
+    <div class="signup-box">
+
+        <h1>Create Account</h1>
+        <p>Sign up to get started</p>
+
+        
+        <p id ="error">
+        
+        </p>
+
+        <form>
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name"  id="name">
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" id="email">
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" id="password">
+
+           
+
+            <button onclick="validate()" id="submit">Sign Up</button>
+
+        </form>
+       
+        <div id="result"></div>
+
+    </div>
+
+
+    
+</body>
+<script>
+    //  let object3 = {
+    //      name : 'Ade',
+    //      age: 20,
+    //      school: 'sqi',
+    //      phone : 23456789, 
+    //      color: 'black',
+    //      gender: 'Male',
+    //      height: 'tall',
+    //      hobbies: ['watch movies','play game']
+    //  }
+
+
+    //   let result = Object.values(object3) 
+      
+
+    //  for (let i = 0; i < result.length; i++) {
+    //     if (typeof result[i] === 'string') {
+    //         console.log(result[i].toUpperCase());
+            
+    //     }
+        
+    //  }
+
+
+       function validate(){
+
+     let name = document.getElementById('name').value.trim();
+     let password = document.getElementById('password').value.trim();
+     let email = document.getElementById('email').value.trim();
+    
+     let error = document.getElementById('error')
+
+     let result = document.getElementById('result')
+      
+    
+
+     
+     if (name === '') {
+        error.innerHTML = 'please input your name'
+        
+     }  else if (email === ''){
+        error.innerHTML = 'please input your email'
+     } else if (password === ''){
+        error.innerHTML = 'please input your password '
+     }  
+     else{
+        result.innerHTML = `
+        Name : ${name} 
+        Email : ${email}
+        Password : ${password}`
+
+     }
+    
+    }
+
+    
+
+
+    
+   
+
+</script>
+</html>
